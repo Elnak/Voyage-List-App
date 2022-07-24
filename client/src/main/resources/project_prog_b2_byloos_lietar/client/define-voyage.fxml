@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<?import javafx.geometry.Insets?>
+<VBox xmlns="http://javafx.com/javafx"
+      xmlns:fx="http://javafx.com/fxml"
+      fx:controller="project_prog_b2_byloos_lietar.client.views.DefineVoyages_view"
+      prefHeight="400.0" prefWidth="600.0"
+        >
+            <TextField>Voyages 1</TextField>
+            <HBox alignment="TOP_CENTER">
+                <padding>
+                    <Insets top="10" />
+                </padding>
+                <Label>
+                    <padding>
+                    <Insets top="5" right="5"/>
+                    </padding>
+                    Date de début :</Label>
+                <DatePicker/>
+
+                <Label>
+                    <padding>
+                    <Insets left="30" top="5" right="5" bottom="15"/>
+                    </padding>
+                    Ville de départ :</Label>
+                <Button>Choisir</Button>
+            </HBox>
+        <ScrollPane fitToHeight="true" fitToWidth="true" VBox.vgrow="ALWAYS"/>
+        <HBox alignment="BOTTOM_CENTER" spacing="30">
+            <padding>
+                <Insets top="5"/>
+            </padding>
+            <Button >Ajouter une étape d'avion</Button>
+            <Button >Ajouter une étape d'hotel</Button>
+        </HBox>
+        <VBox alignment="BOTTOM_RIGHT" style="-fx-font-weight: bold;">
+            <padding>
+                <Insets right="10"/>
+            </padding>
+            <Label>Test total</Label>
+        </VBox>
+
+</VBox>
