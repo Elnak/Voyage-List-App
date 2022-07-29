@@ -15,10 +15,9 @@
         <padding>
             <Insets right="10.0"/>
         </padding>
-
         <Button text="Créer un voyage" onAction="#onCreationVoyage"/>
     </VBox>
-    <ScrollPane fx:id="scrollpane_voyages" fitToHeight="true" fitToWidth="true" VBox.vgrow="ALWAYS">
+    <ScrollPane fx:id="scrollpane_voyages" fitToHeight="true" fitToWidth="true">
         <VBox alignment="TOP_RIGHT" fx:id="list_container"/>
     </ScrollPane>
 

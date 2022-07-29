@@ -1,9 +1,6 @@
 package project_prog_b2_byloos_lietar.server;
 
-import project_prog_b2_byloos_lietar.shared.models.AddVoyages;
-import project_prog_b2_byloos_lietar.shared.models.DeleteVoyages;
-import project_prog_b2_byloos_lietar.shared.models.Hotels;
-import project_prog_b2_byloos_lietar.shared.models.Voyages;
+import project_prog_b2_byloos_lietar.shared.models.*;
 import project_prog_b2_byloos_lietar.shared.networks.ObjectSocket;
 
 import java.io.IOException;
@@ -22,15 +19,16 @@ public class ClientThread extends Thread {
     @Override
     public void run() {
         try {
-            boolean isRunning = true;
-            while (isRunning) {
+            while (true) {
                 try{
                 Object message = objectSocket.read();
                 if (message instanceof AddVoyages) {
                     server.Add_Voyages(((AddVoyages) message).getVoyages());
-                    System.out.println("Here");
+                    server.Block_Interraction();
                 } else if (message instanceof DeleteVoyages) {
                     server.Delete_Voyages(((DeleteVoyages) message).getPosition());
+                } else if (message instanceof EditVoyages) {
+                   server.Edit_Voyages(((EditVoyages) message).getVoyages(),((EditVoyages) message).getPosition());
                 } else {
                     objectSocket.write(server.getListVoyages());
                 }

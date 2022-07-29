@@ -11,7 +11,6 @@ import javafx.scene.layout.HBox;
 import javafx.scene.layout.Priority;
 import javafx.scene.layout.VBox;
 import javafx.scene.text.Font;
-import project_prog_b2_byloos_lietar.shared.models.EditVoyages;
 import project_prog_b2_byloos_lietar.shared.models.ListVoyages;
 import project_prog_b2_byloos_lietar.shared.models.Voyages;
 
@@ -29,6 +28,7 @@ public class Voyages_view {
     protected void onCreationVoyage() throws IOException {
         listener.Create_Define();
     }
+
     public void Show_ListVoyages(ListVoyages listVoyages){
         int count = 0;
         list_container.getChildren().clear();
@@ -48,10 +48,14 @@ public class Voyages_view {
             Label label_villes = new Label("Villes traversée : " + voyages.getVille_traversee());
 
             VBox VBox_Voyages_Droite = new VBox();
-            Button button_voir = new CustomButton("Voir",count);
-            Button button_suppr = new CustomButton("Supprimer",count);
+            Button button_voir = new CustomButton("Voir",count,var);
+            Button button_suppr = new CustomButton("Supprimer",count,var);
             button_voir.setPrefSize(80,20);
             button_suppr.setPrefSize(80,20);
+            if (var.isEdited()){
+                button_suppr.setDisable(true);
+                button_voir.setDisable(true);
+            }
             button_suppr.setOnMouseClicked(event -> {
                 try {
                     Delete_Click(event);
@@ -98,17 +102,18 @@ public class Voyages_view {
             count++;
         }
     }
+
     private void Delete_Click(MouseEvent mouseEvent) throws IOException {
         Object node = mouseEvent.getSource();
         CustomButton node_btn = (CustomButton) node;
         listener.Delete_Define(node_btn.getPosition());
     }
+
     private void Edit_Click(MouseEvent mouseEvent) throws IOException {
         Object node = mouseEvent.getSource();
         CustomButton node_btn = (CustomButton) node;
-        listener.Edit_Define(node_btn.getPosition());
+        listener.Edit_Define(node_btn.getVoyages());
     }
-
 
     public void setListener(Listener listener)
     {
@@ -118,6 +123,6 @@ public class Voyages_view {
     public interface Listener {
         void Create_Define() throws IOException;
         void Delete_Define(int position) throws IOException;
-        void Edit_Define(int position) throws IOException;
+        void Edit_Define(Voyages voyages) throws IOException;
     }
 }

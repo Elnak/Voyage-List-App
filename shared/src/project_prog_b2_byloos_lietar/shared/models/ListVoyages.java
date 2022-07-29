@@ -18,4 +18,8 @@ public class ListVoyages extends Serial{
     public void Add_Voyages(Voyages voyages){
         voyagesList.add(voyages);
     }
+
+    public void Edit_Voyages(Voyages voyage,int position){
+        voyagesList.set(position,voyage);
+    }
 }

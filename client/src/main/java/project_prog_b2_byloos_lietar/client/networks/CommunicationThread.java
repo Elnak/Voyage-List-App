@@ -1,5 +1,6 @@
 package project_prog_b2_byloos_lietar.client.networks;
 
+import project_prog_b2_byloos_lietar.shared.models.BlockVoyages;
 import project_prog_b2_byloos_lietar.shared.models.ListVoyages;
 import project_prog_b2_byloos_lietar.shared.models.Voyages;
 import project_prog_b2_byloos_lietar.shared.networks.ObjectSocket;
@@ -18,13 +19,15 @@ public class CommunicationThread extends Thread{
 
     @Override
     public void run() {
-        while (!isRunning){
+        while (true){
             try {
                 Object message = objectSocket.read();
                 if(message instanceof ListVoyages) {
                     ListVoyages listVoyages = (ListVoyages) message;
                     listener.setListVoyages(listVoyages);
-                    System.out.println("List updater");
+                }
+                if(Integer.class.isInstance(message)){
+                    listener.updateEditedPosition((Integer) message);
                 }
             }
             catch (Exception e){
@@ -33,12 +36,8 @@ public class CommunicationThread extends Thread{
         }
     }
 
-
-    public void stopRunning() {
-        this.isRunning = false;
-    }
-
     public interface Listener {
         void setListVoyages(ListVoyages listVoyages) throws IOException;
+        void updateEditedPosition(int position);
     }
 }

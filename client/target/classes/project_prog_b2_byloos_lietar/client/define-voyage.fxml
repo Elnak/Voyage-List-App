@@ -7,20 +7,24 @@
 <VBox xmlns="http://javafx.com/javafx"
       xmlns:fx="http://javafx.com/fxml"
       fx:controller="project_prog_b2_byloos_lietar.client.views.DefineVoyages_view"
-      prefHeight="400.0" prefWidth="600.0"
-        >
-            <TextField>Voyages 1</TextField>
+      prefHeight="400.0" prefWidth="600.0">
+            <TextField fx:id="name_box">Voyages 1</TextField>
             <HBox alignment="TOP_CENTER">
                 <padding>
                     <Insets top="10" />
                 </padding>
-                <Label>
+                <HBox>
                     <padding>
-                    <Insets top="5" right="5"/>
+                        <Insets left="-50"/>
                     </padding>
-                    Date de début :</Label>
-                <DatePicker/>
 
+                    <Label>
+                        <padding>
+                            <Insets top= "5" right="5"/>
+                        </padding>
+                        Date de début :</Label>
+                    <DatePicker/>
+                </HBox>
                 <Label>
                     <padding>
                     <Insets left="30" top="5" right="5" bottom="15"/>
@@ -28,7 +32,10 @@
                     Ville de départ :</Label>
                 <Button>Choisir</Button>
             </HBox>
-        <ScrollPane fitToHeight="true" fitToWidth="true" VBox.vgrow="ALWAYS"/>
+        <ScrollPane fitToHeight="true" fitToWidth="true" VBox.vgrow="ALWAYS">
+            <VBox fx:id="list_etape"/>
+        </ScrollPane>
+
         <HBox alignment="BOTTOM_CENTER" spacing="30">
             <padding>
                 <Insets top="5"/>

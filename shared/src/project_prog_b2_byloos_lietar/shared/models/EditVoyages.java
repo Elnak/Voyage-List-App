@@ -8,4 +8,12 @@ public class EditVoyages extends Serial{
         this.voyages = voyages;
         this.position = position;
     }
+
+    public int getPosition() {
+        return position;
+    }
+
+    public Voyages getVoyages() {
+        return voyages;
+    }
 }

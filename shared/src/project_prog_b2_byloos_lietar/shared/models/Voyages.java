@@ -10,11 +10,14 @@ public class Voyages extends Serial{
     float cout = 0;
     float temps_voyages = 0;
     float km = 0;
+    boolean isEdited = false;
 
     String ville_traversee = "";
 
     List<Object> liste_evenement_voyage;
+
     public Voyages(){
+        isEdited = true;
     }
 
     public Voyages(String nom_voyages, String ville_depart, Date date_depart, float cout, float temps_voyages, float km, String ville_traversee, List<Object> liste_evenement_voyage){
@@ -26,6 +29,14 @@ public class Voyages extends Serial{
         this.km = km;
         this.ville_traversee = ville_traversee;
         this.liste_evenement_voyage = liste_evenement_voyage;
+    }
+
+    public boolean isEdited() {
+        return isEdited;
+    }
+
+    public void setEdited(boolean edited) {
+        isEdited = edited;
     }
 
     public Date getDate_depart() {return date_depart;}
@@ -41,5 +52,9 @@ public class Voyages extends Serial{
     public float getKm() { return km;}
 
     public String getVille_traversee() { return ville_traversee;}
+
+    public void setNom_voyages(String nom_voyages){
+        this.nom_voyages = nom_voyages;
+    }
 
 }
