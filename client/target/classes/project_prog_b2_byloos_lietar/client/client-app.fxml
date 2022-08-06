@@ -6,7 +6,9 @@
 <?import javafx.scene.control.Button?>
 
 <?import javafx.scene.control.ScrollPane?>
-<VBox alignment="TOP_RIGHT" spacing="15.0" xmlns:fx="http://javafx.com/fxml" fx:controller="project_prog_b2_byloos_lietar.client.views.Voyages_view">
+<VBox alignment="TOP_RIGHT" spacing="15.0" xmlns:fx="http://javafx.com/fxml" fx:controller="project_prog_b2_byloos_lietar.client.views.Voyages_view"
+minWidth="400"
+minHeight="100">
     <padding>
         <Insets top="10.0"/>
     </padding>
@@ -17,7 +19,7 @@
         </padding>
         <Button text="Créer un voyage" onAction="#onCreationVoyage"/>
     </VBox>
-    <ScrollPane fx:id="scrollpane_voyages" fitToHeight="true" fitToWidth="true">
+    <ScrollPane fx:id="scrollpane_voyages" fitToHeight="true" fitToWidth="true" VBox.vgrow="ALWAYS">
         <VBox alignment="TOP_RIGHT" fx:id="list_container"/>
     </ScrollPane>
 

@@ -39,7 +39,7 @@ public class Voyages_view {
             VBox VBox_Voyages_Gauche = new VBox();
             Label label_nom_voyage = new Label(voyages.getNom_voyages());
             label_nom_voyage.setFont(Font.font("Segoe UI",  20));
-            Label label_date_ville_dep = new Label("Depuis " + voyages.getVille_depart() + ", "+ voyages.getDate_depart());
+            Label label_date_ville_dep = new Label(voyages.getVille_depart() + ", "+ voyages.getDate_depart());
 
             HBox hBox1 = new HBox();
             Label label_cout = new Label(voyages.getCout() +" euros");

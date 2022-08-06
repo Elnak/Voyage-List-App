@@ -71,7 +71,7 @@ public class Server {
     public void Delete_Voyages(int position){
         listVoyages.Delete_Voyages(position);
         Update_Voyages();
-
+        Write_Binary();
         synchronized (threads){
             for (ClientThread thread : threads) {
                 try {
@@ -91,7 +91,6 @@ public class Server {
 
     private void Write_Binary(){
         try {
-            listVoyages = new ListVoyages(new ArrayList<>());
             Path tempo = path;
             FileOutputStream fileOut = new FileOutputStream(String.valueOf(tempo));
             ObjectOutputStream objectOut = new ObjectOutputStream(fileOut);
