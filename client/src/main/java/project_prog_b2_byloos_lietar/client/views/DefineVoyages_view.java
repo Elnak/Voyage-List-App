@@ -73,7 +73,6 @@ public class DefineVoyages_view implements EtapeAvion.Listener,EtapeHotel.Listen
     private void Add_Avion(){
         Avions avions = new Avions();
         Setup_Avion(avions);
-        Ask_Update_Define();
     }
     public void AddVilleToEtape(Ville ville){
         if(edited_etape == null){
