@@ -168,7 +168,9 @@ public class ClientApplication extends Application implements DefineVoyages_view
         for (Object var : list_etape_edited) {
             if(var instanceof Avions){
                 Avions avions = (Avions) var;
-                Ville_Traversee = Ville_Traversee + avions.getDestination().toString() + " ,";
+                if(avions.getDestination() != null){
+                    Ville_Traversee = Ville_Traversee + avions.getDestination().toString() + " ,";
+                }
             }
         }
         return Ville_Traversee;
