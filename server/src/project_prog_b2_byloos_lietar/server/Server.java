@@ -100,6 +100,7 @@ public class Server {
             e.printStackTrace();
         }
     }
+
     private void Read_Binary() {
         try {
             Path tempo = path;
