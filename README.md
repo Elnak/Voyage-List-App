@@ -4,6 +4,7 @@ This is a desktop application in **Java** which provide us a way to plan our voy
 Possibility to setup different step of planes or hotels and calculate approximatively the cost.
 Contains a server part which store the voyage list and send it to any client on the same network.
 
+![Visual of the app](https://iili.io/ZKnHTQ.md.png)
 ## Voyage Setup
 
 ### Global Feature
