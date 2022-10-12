@@ -17,6 +17,9 @@ Contains a server part which store the voyage list and send it to any client on 
 - Select the destination
 - Calculate the time and the number of kilometer to do automatically
 
+![Example of Planes](https://iili.io/ZKzYcF.md.png)
+
 ### Hotel
 - Possibility to select how much night we plan to stay
 
+![Example of hotel](https://iili.io/ZKIHUF.md.png)
